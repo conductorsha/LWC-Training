@@ -1,0 +1,35 @@
+.pokerCard {
+    width: 3.5rem;
+    height: 5rem;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    line-height: 4rem;
+    color: #fff;
+    text-align: center;
+}
+
+.pokerCardName {
+    max-width: 50%;
+    word-break: break-word;
+}
+
+.default {
+    background: #e6e6e6;
+}
+
+.responseHidden {
+    background: #3d76ad;
+}
+.show-vote {
+    background:#0094ff;
+    color: white;
+}
+
+.absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

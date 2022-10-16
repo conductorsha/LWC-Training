@@ -1,0 +1,30 @@
+.pokerCard {
+    width: 4rem;
+    height: 6rem;
+    border-radius: 1rem;
+    font-size: 2rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    line-height: 6rem;
+    margin-top: 2rem;
+    color: white;
+    background-color: #0094ff;
+    transition: all 0.5s ease-in;
+}
+.pokerCard:hover{
+    cursor: pointer;
+}
+
+.allPokerCards {
+    margin-bottom: -1rem;
+    overflow-x: auto;
+}
+
+.selectedPokerCard {
+    margin-top: 0.5rem;
+    transform: rotate(10deg);
+}
+
+.dashed-border {
+    border-bottom: 1px dashed #ddd;
+}
