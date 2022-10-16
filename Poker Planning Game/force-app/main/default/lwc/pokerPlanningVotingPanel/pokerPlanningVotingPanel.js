@@ -5,7 +5,6 @@ export default class PokerPlanningVotingPanel extends LightningElement {
     voteOption = "0.5";
 
     handleVoteOptionClick(event) {
-        this.selectedVoteOption = event.target.dataset.id;
         this.resetCardsStyles();
         event.target.classList.add("selectedPokerCard");
     }
