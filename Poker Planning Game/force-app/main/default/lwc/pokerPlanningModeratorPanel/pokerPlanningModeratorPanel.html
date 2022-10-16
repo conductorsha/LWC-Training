@@ -1,6 +1,18 @@
 <template>
     <div class="game-controller-panel">
-        <button>Start Round</button>
-        <button>Finish Round</button>
+        <lightning-button
+            variant="success"
+            label="Start Round"
+            title="Successful action"
+            class="slds-m-left_x-small"
+            onclick={handleStartRound}
+        ></lightning-button>
+        <lightning-button
+            variant="destructive"
+            label="Finish Round"
+            title="Destructive action"
+            class="slds-m-left_x-small"
+            onclick={handleFinishRound}
+        ></lightning-button>
     </div>
 </template>

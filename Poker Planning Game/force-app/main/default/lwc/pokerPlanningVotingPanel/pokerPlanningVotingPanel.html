@@ -1,10 +1,23 @@
 <template>
-    <div
-        class="pokerCard"
-        data-id={voteOption}
-    >
-    <!-- TODO add onclick handler -->
-        {voteOption}
+    <div class="slds-grid slds-wrap">
+        <template for:each={voteOptions} for:item="voteOption">
+            <div key={voteOption} class="slds-col slds-size_2-of-12">
+                <div
+                    key={voteOption}
+                    class="pokerCard slds-text-align_center"
+                    data-id={voteOption}
+                    onclick={handleVoteOptionClick}
+                >
+                    {voteOption}
+                </div>
+            </div>
+        </template>
     </div>
-    <button>Vote!</button>
-</template>
+    <lightning-button
+        variant="brand"
+        label="Vote"
+        title="Primary action"
+        class="slds-m-left_x-small slds-m-top_small slds-show_inline-block"
+        onclick={handleVoteClick}
+    ></lightning-button
+></template>

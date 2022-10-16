@@ -1,8 +1,39 @@
 <template>
-    <div class="players-container">
-        <p>Dummy Player</p>      
-        <div class="pokerCard show-vote slds-align_absolute-center">
-            <p>3</p>
-        </div>           
+    <div class="slds-grid slds-wrap">
+        <template for:each={players} for:item="player">
+            <div
+                key={player.id}
+                class="user-vote slds-col slds-size_3-of-12 slds-grid slds-grid slds-grid_vertical slds-grid_vertical-align-center"
+            >
+                <p>{player.name}</p>
+                <div if:true={roundInProgress}>
+                    <div if:false={player.voted}>
+                        <div class="pokerCard default slds-align_absolute-center">
+                            <lightning-icon
+                                icon-name="utility:salesforce1"
+                                alternative-text="No Vote yest"
+                                title="No vote yet"
+                                variant="inverse"
+                            ></lightning-icon>
+                        </div>
+                    </div>
+                    <div if:true={player.voted} class="user-voted">
+                        <div class="pokerCard responseHidden slds-align_absolute-center">
+                            <lightning-icon
+                                icon-name="utility:salesforce1"
+                                alternative-text="No Vote yest"
+                                title="No vote yet"
+                                variant="inverse"
+                            ></lightning-icon>
+                        </div>
+                    </div>
+                </div>
+                <div if:false={roundInProgress}>
+                    <div class="pokerCard show-vote slds-align_absolute-center">
+                        <p>{player.estimationChoice}</p>
+                    </div>
+                </div>
+            </div>
+        </template>
     </div>
 </template>

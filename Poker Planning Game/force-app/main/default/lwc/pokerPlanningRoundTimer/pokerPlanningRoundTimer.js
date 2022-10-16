@@ -6,7 +6,7 @@ export default class PokerPlanningRoundTimer extends LightningElement {
     secondsPassed = 0;
     roundDurationInSec = 0;
 
-    startTheTimer(seconds) {
+    @api startTheTimer(seconds) {
         this.roundDurationInSec = seconds;
         clearInterval(this.intervalId);
         let endDate = this.getEndDate(seconds);
@@ -17,6 +17,8 @@ export default class PokerPlanningRoundTimer extends LightningElement {
 
             if (distance < 1) {
                 clearInterval(this.intervalId);
+                this.resetTimer();
+                this.dispatchEvent(new CustomEvent("timerexpired"));
             } else {
                 this.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 this.seconds = Math.floor((distance % (1000 * 60)) / 1000);
@@ -29,6 +31,14 @@ export default class PokerPlanningRoundTimer extends LightningElement {
         let dt = new Date();
         dt = new Date(dt.getTime() + seconds * 1000);
         return dt.getTime();
+    }
+
+    @api resetTimer() {
+        this.minutes = 0;
+        this.seconds = 0;
+        this.secondsPassed = 0;
+        this.roundDurationInSec = 0;
+        clearInterval(this.intervalId);
     }
 
     get timeLeft() {

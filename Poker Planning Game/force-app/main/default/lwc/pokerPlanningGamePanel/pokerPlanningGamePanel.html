@@ -1,0 +1,30 @@
+<template>
+    <div class="slds-grid_frame">
+        <lightning-card title="Welcome to poker planning game">
+            <div class="game-container slds-grid slds-grid_vertical-align-center">
+                <div class="player-panel slds-size_6-of-12">
+                    <c-poker-planning-voting-panel
+                        onuservote={handleUserVote}
+                        class={votingPanelClass}
+                    ></c-poker-planning-voting-panel>
+                    <c-poker-planning-player-counter
+                        players={players}
+                        round-in-progress={roundInProgress}
+                    ></c-poker-planning-player-counter>
+                </div>
+                <div class="vote-information slds-size_2-of-12">
+                    <c-poker-planning-round-timer
+                        ontimerexpired={finishRound}
+                    ></c-poker-planning-round-timer>
+                    <c-poker-planning-final-estimate></c-poker-planning-final-estimate>
+                </div>
+                <div if:true={isModerator} class="moderation-panel slds-size_4-of-12">
+                    <c-poker-planning-moderator-panel
+                        onroundstart={startRound}
+                        onroundfinish={finishRound}
+                    ></c-poker-planning-moderator-panel>
+                </div>
+            </div>
+        </lightning-card>
+    </div>
+</template>
