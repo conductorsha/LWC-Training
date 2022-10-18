@@ -18,7 +18,8 @@
 ![image](https://user-images.githubusercontent.com/36835636/196503138-8d4cd68e-0109-42b1-8bed-d15226066a68.png)
 5. deploy the code using the command below: 
 ```sfdx force:source:deploy -p force-app/``` in terminal
-6. install the required npm packages:
+6. Install nodejs https://nodejs.org/en/download/
+7. install the required npm packages:
 run ```npm i``` in terminal
 
 ## All set, see you on the training :shipit: :godmode: :feelsgood:
